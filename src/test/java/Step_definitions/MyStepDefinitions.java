@@ -104,19 +104,19 @@ public class MyStepDefinitions {
             element = (new WebDriverWait(driver, 1, 1000)).until(ExpectedConditions.elementToBeClickable(login.password));
             element = driver.findElement(login.password);
 
+            //проверить
             System.out.println(element.isDisplayed());
 
             element.sendKeys("naZAVODEBRAK");
             element = driver.findElement(login.buttonEnter);
             element.click();
 
-
         }catch (TimeoutException e){
             System.out.println(driver.getCurrentUrl());
             e.printStackTrace();
-
         }
     }
+
     @Then("^Logout$")
     public void AccLogout() throws Throwable {
         driver.get("https://www.kinopoisk.ru/");
